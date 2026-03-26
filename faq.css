@@ -1,0 +1,107 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: #cefcd1;
+}
+
+
+.header{
+    background:rgb(151, 233, 176);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 15px 20px;
+}
+
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo span{
+font-family: sans-serif;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+}
+
+
+.balay img{
+    height: auto;
+    width: 50px;
+    cursor:pointer;
+}
+
+
+.container{
+    width:90%;
+    max-width:800px;
+    margin:40px auto;
+    text-align:center;
+}
+
+.title{
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#333;
+    margin-bottom:30px;
+}
+
+.faq{
+    text-align:left;
+}
+
+.faq-item{
+    background:#ffffff;
+    margin:10px 0;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.faq-item span{
+    font-weight:bold;
+}
+
+
+.faq-item:hover{
+    background:#dcdcdc;
+}
+
+
+@media (max-width:600px){
+
+    .title{
+        font-size:18px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .faq-item{
+        font-size:14px;
+        padding:10px;
+    }
+}

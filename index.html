@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HopSearch · responsive</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <img src="putos/HSLogoWhite.png" alt="logo" class="logo1">H<p style="color: red;">o</p>pSearch
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="specMen.html">Special Mentions</a></li>
+            <li><a href="maps.html">Map</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><img src="putos/searchIcon.png" alt="search" class="logo2"></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul>
+                <li><button onclick="showHospitals()">
+                        <div class="hover-container">
+                            <img src="putos/hospital.png" alt="hospital" class="logo1">
+                            <span class="hover-text">Hospitals</span>
+                        </div>
+                    </button>
+                </li>
+                <li><button onclick="showClinics()">
+                        <div class="hover-container">
+                            <img src="putos/clinic.png" alt="clinic" class="logo1">
+                            <span class="hover-text">Clinics</span>
+                        </div>
+                    </button>
+                </li>
+                <li><button onclick="showCenters()">
+                        <div class="hover-container">
+                            <img src="putos/healthCenter.png" alt="health center" class="logo1">
+                            <span class="hover-text">Centers</span>
+                        </div>
+                    </button>
+                </li>
+                <li><button onclick="showAll()">
+                    <div class="hover-container">
+                            <img src="putos/robots.png" alt="robots" class="logo1">
+                            <span class="hover-text">Show All</span>
+                        </div>
+                </button>
+            </li>
+            </ul>
+        </div>
+    </div> <!-- end wrapper -->
+
+    <!-- main blocks (preserving original structure but enhancing readability) -->
+    <main>
+        <section class="pages1 hospital-panel">
+
+            <!-- TABS -->
+            <div class="tabs">
+                <h2>General</h2>
+                <span>Available</span>
+                <img src="putos/filter.png" alt="legends" class="logo2">
+            </div>
+
+            <!-- LIST -->
+            <div class="hospital-list">
+
+                <div class="hospital-item">
+                    <p>Hospital 1</p>
+                    <span>›</span>
+                </div>
+
+                <div class="hospital-item">
+                    <p>Hospital 2</p>
+                    <span>›</span>
+                </div>
+
+                <div class="hospital-item">
+                    <p>Hospital 3</p>
+                    <span>›</span>
+                </div>
+
+                <div class="hospital-item">
+                    <p>Clinic 1</p>
+                    <span>›</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="map-container">
+            <div id="map"></div>
+
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

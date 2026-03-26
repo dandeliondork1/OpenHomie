@@ -1,0 +1,444 @@
+/* responsive reset + base */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f8fff9;
+    padding-top: 150px;
+    /* fixed nav height */
+}
+
+/* === responsive FIXED NAV === */
+nav {
+    width: 100%;
+    height: auto;
+    min-height: 90px;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgb(151, 233, 176);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    width: 100%;
+    padding: 0 10px;
+}
+
+/* logo + HopSearch text */
+nav ul li:first-child {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+nav ul li:first-child p {
+    display: inline;
+    color: red;
+    margin: 0;
+}
+
+.logo1 {
+    width: 60px;
+    height: auto;
+    max-width: 100px;
+    min-width: 40px;
+}
+
+/* nav links */
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 10px;
+    color: black;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+/* search icon */
+nav ul li:last-child {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.logo2 {
+    width: 36px;
+    height: auto;
+    min-width: 30px;
+}
+
+/* adjust for smaller screens: allow wrapping */
+@media screen and (max-width: 900px) {
+    nav ul {
+        gap: 0.5rem 1rem;
+        justify-content: flex-start;
+    }
+
+    nav ul li:first-child {
+        font-size: 1.4rem;
+        margin-right: 10px;
+    }
+
+    .logo1 {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        padding: 10px 12px;
+    }
+
+    nav ul li:first-child {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    nav ul li:last-child {
+        margin-left: 0;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+}
+
+/* === wrapper + sidebar === */
+.wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.wrapper .sidebar {
+    position: fixed;
+    left: 0;
+    top: 90px;
+    width: 160px;
+    height: calc(100vh - 90px);
+    background: rgb(190, 243, 210);
+    padding: 20px 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    z-index: 90;
+}
+
+/* make sidebar icons stack nicely */
+.wrapper .sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 150px;
+}
+
+.wrapper .sidebar ul li {
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.wrapper .sidebar ul li:first-child {
+    margin-top: 40px;
+}
+
+.wrapper .sidebar ul li img {
+    width: 70px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s;
+}
+
+.wrapper .sidebar ul li img:hover {
+    transform: scale(1.05);
+
+}
+
+.hover-container {
+    position: relative; /* positioning context */
+}
+
+.hover-text {
+    display: none;
+    position: absolute;
+    left: 43%;              /* center horizontally */
+    transform: translateX(-50%);  /* center by shifting half width */
+    margin-top: 6px;        /* space between icon and tooltip */
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.hover-container:hover .hover-text {
+    display: block;
+}
+
+/* MAIN GRID : MAP + PANEL FULLY RESPONSIVE */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 170px;
+    padding: 20px 30px 40px 25px;
+    gap: 28px;
+    transition: all 0.2s;
+}
+
+/* hospital panel override */
+.hospital-panel {
+    flex: 1.2;
+    min-width: 260px;
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    padding: 1.5rem 1.2rem;
+    backdrop-filter: blur(2px);
+    transition: all 0.2s;
+    height: fit-content;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* tabs */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #cfe9db;
+    padding-bottom: 10px;
+}
+
+.tabs h2 {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.tabs span {
+    font-weight: 500;
+    color: #2c5e3f;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 4px 8px;
+    transition: 0.2s;
+}
+
+.tabs span:hover {
+    background: #e0f2e9;
+}
+
+.tabs img {
+    margin-left: auto;
+    width: 28px;
+    cursor: pointer;
+}
+
+/* hospital list styled like FAQ */
+.hospital-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* each item */
+.hospital-item {
+    background: #ffffff;
+    border: 1px solid #e2f0e8;
+    border-radius: 60px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+/* hover effect (same as FAQ) */
+.hospital-item:hover {
+    background: #dcdcdc;
+}
+
+/* text */
+.hospital-item p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* arrow/icon */
+.hospital-item span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* MAP CONTAINER — fully responsive, elastic width */
+.map-container {
+    flex: 2.2;
+    min-width: 280px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    background: #d9e6db;
+    transition: all 0.2s;
+}
+
+#map {
+    height: 730px;
+    width: 100%;
+    background: #cde5d4;
+    z-index: 1;
+
+}
+
+/* tablet and small desktop */
+@media screen and (max-width: 1000px) {
+    body {
+        padding-top: 130px;
+    }
+
+    .wrapper .sidebar {
+        width: 130px;
+    }
+
+    main {
+        margin-left: 140px;
+        padding: 20px 15px;
+        gap: 18px;
+    }
+
+    .pages1 {
+        font-size: 1.7rem;
+        min-height: 150px;
+    }
+
+    .logo1 {
+        width: 45px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .wrapper .sidebar {
+        width: 100px;
+        top: 110px;
+    }
+
+    .wrapper .sidebar ul li img {
+        width: 50px;
+    }
+
+    main {
+        margin-left: 110px;
+        padding: 15px 12px;
+        gap: 15px;
+    }
+
+    .pages1 {
+        font-size: 1.4rem;
+        padding: 1rem 0.5rem;
+    }
+}
+
+/* small screens: convert sidebar to bottom bar */
+@media screen and (max-width: 550px) {
+    body {
+        padding-top: 160px;
+    }
+
+    .wrapper .sidebar {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: auto;
+        width: 100%;
+        height: auto;
+        min-height: 90px;
+        background: rgb(190, 243, 210);
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        padding: 8px 0;
+        z-index: 95;
+    }
+
+    .wrapper .sidebar ul {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5px;
+        padding: 0 8px;
+    }
+
+    .wrapper .sidebar ul li {
+        margin-top: 0 !important;
+        padding: 5px;
+        width: auto;
+    }
+
+    .wrapper .sidebar ul li img {
+        width: 45px;
+    }
+
+    main {
+        margin-left: 0;
+        margin-bottom: 100px;
+        padding: 20px 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .pages1 {
+        font-size: 1.8rem;
+        min-height: 130px;
+        width: 100%;
+    }
+}
+
+/* extra fine tuning */
+@media screen and (max-width: 380px) {
+    nav ul li:first-child {
+        font-size: 1.2rem;
+    }
+
+    .logo2 {
+        width: 30px;
+    }
+
+    .logo1 {
+        width: 40px;
+    }
+
+    .wrapper .sidebar ul li img {
+        width: 38px;
+    }
+}
